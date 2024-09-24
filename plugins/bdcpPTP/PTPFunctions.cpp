@@ -1134,6 +1134,12 @@ PTPCamera::Transaction(PTPContainer *ptp, uint16 flags, uint32 length, char** da
             usbintf.Unlock();
             return B_ERROR;
     }
+    if (status < B_OK)
+    {
+        /* No need to get a response if the transaction failed */
+        usbintf.Unlock();
+        return status;
+    }
     /* get response */
     status_t respStatus = GetResponse(ptp);
     if (respStatus <= B_OK) status = respStatus;
