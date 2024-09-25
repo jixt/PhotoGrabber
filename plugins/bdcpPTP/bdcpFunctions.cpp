@@ -201,10 +201,6 @@ status_t getThumbnail(BBitmap *&picture)
                 picture = NULL;
                 return status;
             }
-            else
-            {
-                DEBUG("Still OK yeah!?");
-            }
         }
         picture = item->thumb;
         return B_OK;

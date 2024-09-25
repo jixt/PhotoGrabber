@@ -172,8 +172,10 @@ protected:
     status_t 					CheckIntEvent(PTPUSBEventsContainer* event, bool wait);
     status_t 					CheckEvent(PTPUSBEventsContainer** event);
     status_t 					GetStorage();
+    PictureDesc*                GetObjectInfo(uint32 handle);
     status_t 					GetObjects(uint32 storage);
     BUSBDevice* 				dev;
+    status_t                    SetPictureDesc(PictureDesc* obj, PTPObjectInfoRaw* oi);
     PictureDesc* 				MakePictureDesc(PTPObjectInfoRaw* oi);
     const BUSBEndpoint* 		inep;
     const BUSBEndpoint* 		outep;
